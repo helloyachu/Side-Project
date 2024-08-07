@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        git branch - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{background:#fff;color:#333;display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{background-color:#eaffea;color:#55a532}.hljs-deletion{background-color:#ffecec;color:#bd2c00}.hljs-link{text-decoration:underline}.markdown-body{word-wrap:break-word;font-size:16px;line-height:1.5}.markdown-body:after,.markdown-body:before{content:"";display:table}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-bottom:16px;margin-top:0}.markdown-body hr{background-color:#e7e7e7;border:0;height:.25em;margin:24px 0;padding:0}.markdown-body blockquote{border-left:.25em solid #ddd;color:#777;font-size:16px;padding:0 1em}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb;color:#555;display:inline-block;font-size:11px;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{border-bottom:1px solid #eee;padding-bottom:.3em}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{color:#777;font-size:.85em}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{list-style-type:none;padding:0}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-bottom:0;margin-top:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{font-size:1em;font-style:italic;font-weight:700;margin-top:16px;padding:0}.markdown-body dl dd{margin-bottom:16px;padding:0 16px}.markdown-body table{display:block;overflow:auto;width:100%;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{border:1px solid #ddd;padding:6px 13px}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{background-color:#fff;box-sizing:initial;max-width:100%}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{background-color:initial;max-width:none;vertical-align:text-top}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{border:1px solid #ddd;display:block;float:left;margin:13px 0 0;overflow:hidden;padding:7px;width:auto}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{clear:both;color:#333;display:block;padding:5px 0 0}.markdown-body span.align-center{clear:both;display:block;overflow:hidden}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{clear:both;display:block;overflow:hidden}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{background-color:#0000000a;border-radius:3px;font-size:85%;margin:0;padding:.2em 0}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{content:"\00a0";letter-spacing:-.2em}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{background:#0000;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{background-color:#f7f7f7;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown-body pre code,.markdown-body pre tt{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{background:#fff;border:0;padding:10px 8px 9px;text-align:right}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{background:#f8f8f8;border-top:0;font-weight:700}.news .alert .markdown-body blockquote{border:0;padding:0 0 0 40px}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{cursor:default!important;float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle}.markdown-body{max-width:758px;overflow:visible!important;padding-bottom:40px;padding-top:40px;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{border-right:3px solid #6ce26c!important;box-sizing:initial;color:#afafaf!important;cursor:default;display:inline-block;min-width:20px;padding:0 8px 0 0;position:relative;text-align:right;z-index:4}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-bottom:none;border-left:none;border-top:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-collapse:inherit!important;border-spacing:0}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{margin-bottom:unset;overflow:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p:last-child{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{background-color:inherit;border-radius:0;overflow:visible;text-align:center;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{height:100%;max-width:100%}.markdown-body pre>code.wrap{word-wrap:break-word;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap}.markdown-body .alert>p:last-child,.markdown-body .alert>ul:last-child{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{background-color:#000;background-position:50%;background-repeat:no-repeat;background-size:contain;cursor:pointer;display:table;overflow:hidden;text-align:center}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{object-fit:contain;width:100%;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{height:100%;left:0;position:absolute;top:0;width:100%}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{color:#fff;height:auto;left:50%;opacity:.3;position:absolute;top:50%;transform:translate(-50%,-50%);transition:opacity .2s;width:auto;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.figma{display:table;padding-bottom:56.25%;position:relative;width:100%}.figma iframe{border:1px solid #eee;bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.markmap-container{height:300px}.markmap-container>svg{height:100%;width:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{color:#777;margin:25px auto -25px;max-width:760px;position:relative;z-index:2}.toc .invisable-node{list-style-type:none}.ui-toc{bottom:20px;position:fixed;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{border-bottom-left-radius:0;border-top-left-radius:0;height:40px;padding:10px 4px}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{color:#fff;opacity:1;transition:opacity .2s}.ui-toc-label:focus{background-color:#ccc;color:#000;opacity:.3}.ui-toc-label:hover{background-color:#ccc;opacity:1;transition:opacity .2s}.ui-toc-dropdown{margin-bottom:20px;margin-top:20px;max-height:70vh;max-width:45vw;overflow:auto;padding-left:10px;padding-right:10px;text-align:inherit;width:25vw}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{letter-spacing:.0029em;padding-right:0}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{color:#767676;display:block;font-size:13px;font-weight:500;padding:4px 20px}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{background-color:initial;border-left:1px solid #000;color:#000;padding-left:19px;text-decoration:none}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{border-left:none;border-right:1px solid #000;padding-right:19px}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{background-color:initial;border-left:2px solid #000;color:#000;font-weight:700;padding-left:18px}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{border-left:none;border-right:2px solid #000;padding-right:18px}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:30px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:40px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{font-weight:500;padding-left:28px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{font-weight:500;padding-left:38px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{max-height:70vh;max-width:15vw;overflow:auto;position:fixed;top:0}.back-to-top,.expand-toggle,.go-to-bottom{color:#999;display:block;font-size:12px;font-weight:500;margin-left:10px;margin-top:10px;padding:4px 10px}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:50%;display:block;height:20px;margin-bottom:2px;margin-right:5px;margin-top:2px;width:20px}.ui-user-icon.small{display:inline-block;height:18px;margin:0 0 .2em;vertical-align:middle;width:18px}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;padding-left:22px;text-decoration:none}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}.inline-spoiler-section{cursor:pointer}.inline-spoiler-section .spoiler-text{background-color:#333;border-radius:2px}.inline-spoiler-section .spoiler-text>*{opacity:0}.inline-spoiler-section .spoiler-img{filter:blur(10px)}.inline-spoiler-section.raw{background-color:#333;border-radius:2px}.inline-spoiler-section.raw>*{opacity:0}.inline-spoiler-section.unveil{cursor:auto}.inline-spoiler-section.unveil .spoiler-text{background-color:#3333331a}.inline-spoiler-section.unveil .spoiler-text>*{opacity:1}.inline-spoiler-section.unveil .spoiler-img{filter:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{color:#222;position:relative;z-index:1}.markdown-body.slides:before{background-color:currentColor;bottom:0;box-shadow:0 0 0 50vw;content:"";display:block;left:0;position:absolute;right:0;top:0;z-index:-1}.markdown-body.slides section[data-markdown]{background-color:#fff;margin-bottom:1.5em;position:relative;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{left:1em;max-height:100%;overflow:hidden;position:absolute;right:1em;top:50%;transform:translateY(-50%)}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{border:3px solid #777;content:"";height:1.5em;position:absolute;right:1em;top:-1.5em}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}svg{text-shadow:none}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled comment-inner" data-hard-breaks="true"><h1 id="git-branch" data-id="git-branch"><a class="anchor hidden-xs" href="#git-branch" title="git-branch"><span class="octicon octicon-link"></span></a><span>git branch</span></h1><p><span>建立git-repos/branch-demo/A，當作A電腦</span><br>
+<span>建立git-repos/branch-demo/B，當作B電腦</span></p><p><span>(A電腦)</span><br>
+<span>在A電腦建立branch-tut，作為repos</span><br>
+<span>建立chapter.txt檔，內容輸入’chapter 1’，儲存在branch-tut資料夾</span></p><p><span>在branch-tut資料夾，右鍵Git Bash Here</span><br>
+<span>指令:git init</span><br>
+<span>指令:git add .</span><br>
+<span>指令:git commit -m “chapter 1”</span></p><p><span>在github建立新的repos，叫做branch-tut</span><br>
+<span>指令:git remote add origin </span><a href="https://github.com/helloyachu/branch-tut.git" target="_blank" rel="noopener"><span>https://github.com/helloyachu/branch-tut.git</span></a><br>
+<span>指令:git push -u origin master</span><br>
+<span>(已經將chapter.txt檔push到github上了)</span></p><p><span>(B電腦)</span><br>
+<span>進入B電腦路徑，現在在git-repos/branch-demo/A/branch-tut</span><br>
+<span>指令:cd …</span><br>
+<span>指令:ls</span><br>
+<span>指令:cd branch-tut</span><br>
+<span>指令:ls</span><br>
+<span>回上兩層指令:cd …/…/</span><br>
+<span>指令:ls</span><br>
+<span>指令:cd B</span><br>
+<span>(現在在B電腦)</span></p><p><span>指令:git clone </span><a href="https://github.com/helloyachu/branch-tut.git" target="_blank" rel="noopener"><span>https://github.com/helloyachu/branch-tut.git</span></a><br>
+<span>(將A電腦的chapter.txt檔下載到B電腦了)</span><br>
+<span>指令:ls</span><br>
+<span>指令:cd branch-tut</span><br>
+<span>指令:ls</span><br>
+<span>指令:code .</span><br>
+<span>(在VSCode開啟B電腦的chapter.txt檔)</span></p><p><span>(現在要在B電腦建立一個branch，並做幾次commit)</span><br>
+<span>在VSCode左下角點選master，master是現在的branch名稱，點選Create new branch，branch名稱輸入’new-feature’</span><br>
+<span>或是 在command line，指令:git checkout -b &lt;branch名稱&gt;，建立新branch並切換過去</span></p><ul>
+<li><span>git branch，查看電腦上的branch(按q可以離開)，可以看到你所有的branch</span></li>
+<li><span>git branch -a，查看所有的branch(包含remote)，可以看到你的remote上面的branch</span></li>
+</ul><p><span>指令:git checkout -b new-feature</span><br>
+<span>指令:git branch</span><br>
+<span>指令:git branch -a</span></p><p><span>(修改幾次chapter.txt檔以及新增numter.txt檔 並commit，以模擬開發情形)</span><br>
+<span>在VSCode修改chapter.txt</span><br>
+<span>內容新增’number 1’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’number 1’，並按commit</span></p><p><span>在VSCode修改chapter.txt</span><br>
+<span>內容新增’number 2’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’number 2’，並按commit</span></p><p><span>在VSCode修改chapter.txt</span><br>
+<span>內容新增’number 3’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’number 3’，並按commit</span></p><p><span>在VSCode修改chapter.txt</span><br>
+<span>內容新增’number 4’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’number 4’，並按commit</span></p><p><span>新增number.txt檔，內容輸入’number 5’，儲存在branch-tut資料夾</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’number 5’，並按commit</span><br>
+<span>指令:git status</span><br>
+<span>指令:git log</span><br>
+<span>(Shift +Q 可以離開)</span></p><p><span>(A電腦)</span><br>
+<span>(到A電腦修改檔案 並commit及push，模擬</span><strong><span>conflict</span></strong><span>)</span><br>
+<span>在git-repos/branch-demo/A/branch-tut，右鍵Git Bash Here</span><br>
+<span>指令:code .</span><br>
+<span>(在VSCode開啟A電腦的chapter.txt檔)</span></p><p><span>在VSCode修改chapter.txt檔</span><br>
+<span>內容新增’內容新增’chapter 2’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’chapter 2’，並按commit</span><br>
+<span>指令:git status</span><br>
+<span>指令:git log</span><br>
+<span>指令:git push</span><br>
+<span>(已經將修改後的commit push到github上了)</span></p><p><span>(B電腦)</span><br>
+<span>(將B電腦的new-feature push到github)</span><br>
+<span>在git-repos/branch-demo/B/branch-tut，右鍵Git Bash Here</span><br>
+<span>指令:git push -u origin new-feature</span><br>
+<span>或是 指令:git push -u origin HEAD，表示push所在的branch的最後面的commit</span><br>
+<span>(已經將新的branch，push到github上了)</span></p><h1 id="Command-line指令練習" data-id="Command-line指令練習"><a class="anchor hidden-xs" href="#Command-line指令練習" title="Command-line指令練習"><span class="octicon octicon-link"></span></a><span>Command line指令練習</span></h1><p><span>在branch-demo建立test 資料夾</span><br>
+<span>在test資料夾，右鍵Git Bash Here</span><br>
+<span>建立資料夾指令:mkdir A</span><br>
+<span>開啟資料夾指令:explorer.exe A</span><br>
+<span>進入command line路徑指令:cd A</span><br>
+<span>指令:mkdir branch-tut</span><br>
+<span>指令:cd branch-tut</span><br>
+<span>顯示所有資料夾或檔案指令:ls</span><br>
+<span>在branch-tut建立test.txt檔，內容輸入’TEST!!!’</span><br>
+<span>新增branch指令:git checkout -b test</span><br>
+<span>看到所有的branch指令:git branch</span><br>
+<span>看到remote上面的branch指令:git branch -a</span></p><p><span>在VSCode開啟資料夾指令:code .</span><br>
+<span>(在VSCode開啟檔案指令:code test.txt)</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’test’，並按commit</span></p><p><span>在VSCode修改test.txt</span><br>
+<span>內容新增’test 2’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’test 2’，並按commit</span></p><p><span>指令:git status</span><br>
+<span>指令:git log</span><br>
+<span>指令:git remote add origin </span><a href="https://github.com/helloyachu/branch-tut.git" target="_blank" rel="noopener"><span>https://github.com/helloyachu/branch-tut.git</span></a><br>
+<span>指令:git push -u origin test</span><br>
+<span>(已經將新的branch，push到github上了)</span></p><h2 id="補充指令" data-id="補充指令"><a class="anchor hidden-xs" href="#補充指令" title="補充指令"><span class="octicon octicon-link"></span></a><span>補充指令</span></h2><ul>
+<li>
+<p><span>移除remote指令:git remote remove origin</span><br>
+<span>(更改github repository名稱後，在command line要重新remote add時使用)</span></p>
+</li>
+<li>
+<p><span>切換branch指令:git switch master</span></p>
+</li>
+<li>
+<p><span>刪除現有branch指令:git branch -d &lt;branch名稱&gt;</span><br>
+<span>(把新的branch整合回master後，舊的branch就可以刪除)</span><br>
+<span>(需先將command line切換成其他branch，才能刪除branch)</span></p>
+</li>
+</ul><h2 id="把新的branch整合回master" data-id="把新的branch整合回master"><a class="anchor hidden-xs" href="#把新的branch整合回master" title="把新的branch整合回master"><span class="octicon octicon-link"></span></a><span>把新的branch整合回master</span></h2><ul>
+<li><span>branch</span></li>
+<li><span>pull request</span></li>
+<li><span>rebase</span></li>
+<li><span>merge</span></li>
+</ul><h3 id="1在github上用pull-request" data-id="1在github上用pull-request"><a class="anchor hidden-xs" href="#1在github上用pull-request" title="1在github上用pull-request"><span class="octicon octicon-link"></span></a><span>1.在github上用pull request</span></h3><p><span>進入github new-feature branch，點選Compare &amp; pull request(綠色按鈕)或是Contribute項下的Open pull requesst(綠色按鈕)</span></p><p><span>Can’t automatically merge.，是因為在A電腦跟B電腦都做過更新了，這兩個branch是有衝突的狀態，有衝突的狀態下無法直接merge</span></p><p><span>要使用rebase，在主分支master有做修改的情況下，將new-feature接回原本的分支的最新進度。</span></p><p><span>(B電腦)</span><br>
+<strong><span>指令:git switch master</span></strong><br>
+<span>(目前修改中的檔案要先commit才能切換)</span></p><div class="alert alert-success">
+<p><strong><span>switch補充</span></strong><br>
+<span>如果開發還沒有完成，要做switch，可以先做假的commit，commit訊息輸入’work in Progress’，就可以切換到別的分支，工作的時後在切回來，使用Undo Last commit就可以回到之前的狀態</span></p>
+<blockquote>
+<p><span>點選VSCode Sourse Control(Ctrl+Shift+G)(第3個圖示)框右上角三個點，點選Commit，再點選Undo last Commit，可以修改commit內容或是檔案內容，也等於取消commit，並回到上一次commit之前。使用指令:git log 看commit紀錄，會發現上一個commit已經不見了。如果要在git command line使用，可以用指令:git reset --soft HEAD~1，能往前退一個commit，並保留檔案修改的部分，只取消commit，不影響變更後的內容。指令:git reset --soft HEAD~2，能往前退二個commit，但是只能退到剩一個commit。</span></p>
+</blockquote>
+</div><p><strong><span>指令:git pull</span></strong><span>，把預設的upstream的新進度抓下來(現在的upstream是origin，也就是剛剛見的github repo)</span></p><p><strong><span>指令:git log</span></strong><br>
+<span>可以看到git log這邊就已經是有chapter 2，就是A做的修改的部分，剛剛A是在master上面做修改，這邊切到master分支才抓下來，A修改後上傳到github，B使用git pull把A的新版本抓到B電腦的master分支，表示主分支master會是最新的版本，才能做rebaase。簡單來說就是先把master pull一次，再回到new-feature branch上做rebase。</span></p><p><strong><span>指令:git switch new-feature</span></strong></p><ul>
+<li><span>git rebase &lt;要rebase到哪個分支&gt;，把目前的分支的起始點移到最新進度</span></li>
+<li><span>git rebase --continue，解完衝突之後繼續rebase(有時候可能要解複數次衝突)</span></li>
+</ul><p><strong><span>指令:git rebase master</span></strong><br>
+<span>會產生conflicts，</span><strong><span>到VSCode選擇版本</span></strong><br>
+<span>按加號</span><br>
+<span>指令:git rebase --continue</span></p><p><span>會產生conflicts，</span><strong><span>到VSCode選擇版本</span></strong><br>
+<span>按加號</span><br>
+<span>指令:git rebase --continue</span></p><p><span>會產生conflicts，</span><strong><span>到VSCode選擇版本</span></strong><br>
+<span>按加號</span><br>
+<span>指令:git rebase --continue</span></p><p><span>會產生conflicts，</span><strong><span>到VSCode選擇版本</span></strong><br>
+<span>按加號</span><br>
+<span>指令:git rebase --continue</span></p><p><span>指令:git push</span><br>
+<span>不能push，因為push在一般的情況下，只允許對一個repository去做新的commits。現在電腦端的git log跟github上的commits紀錄是不相容的，也就是說push上去會改變歷史紀錄，一般push只允許新增新的commits在後面，如果要強制push，可以使用</span><strong><span>指令:git push -f</span></strong><span>，強制把現在電腦上的紀錄push到remote。</span></p><div class="alert alert-danger">
+<p><span>注意事項:</span><br>
+<span>指令:git push -f，</span><strong><span>非常不建議在主分支使用</span></strong><span>，只能在自己新開出來的分支上做，因為一旦改變了過去的歷史，每一個在branch上面開發的所有人都會受到影響，會讓整個repository混亂，所以不要在大家共用的主要分枝上做這件事情，只能在自己新開的分支上面做!!!</span></p>
+</div><p><span>(已經將電腦端的commits，push到github上了)</span><br>
+<span>成功push上去之後，再次進入github new-feature branch，點選Compare &amp; pull request(綠色按鈕)或是Contribute項下的Open pull requesst。這次就可以Able to merge.，再點選Create pull request(綠色按鈕)，再點選Merge pull requst(綠色按鈕)項，有三種不同方法，通常是使用第一種Create a merge commit，並點選Confirm merge(綠色按鈕)。</span><br>
+<span>(已經merge完了，再到Commits紀錄查看，可以發現有新的commits)</span></p><h3 id="2在自己的電腦merge之後再push" data-id="2在自己的電腦merge之後再push"><a class="anchor hidden-xs" href="#2在自己的電腦merge之後再push" title="2在自己的電腦merge之後再push"><span class="octicon octicon-link"></span></a><span>2.在自己的電腦merge之後再push</span></h3><p><span>(在B電腦)</span><br>
+<span>指令:git pull</span></p><p><span>(在A電腦)</span><br>
+<span>指令:git pull</span><br>
+<span>(確認兩台電腦都在最新進度了)</span></p><p><span>(在B電腦建立新的分支new-feature2)</span><br>
+<span>指令:git checkout -b new-feature2</span></p><p><span>(在A電腦做更新，模擬產生</span><strong><span>conflict</span></strong><span>)</span><br>
+<span>在VSCode修改chapter.txt檔</span><br>
+<span>內容新增’first’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’change 1 from A’，並按commit</span><br>
+<span>指令:git push</span></p><p><span>(在B電腦做更新)</span><br>
+<span>在VSCode修改chapter.txt檔</span><br>
+<span>內容新增’second’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’change 2 from B’，並按commit</span></p><p><span>在VSCode修改number.txt檔</span><br>
+<span>內容新增’third’</span><br>
+<span>按加號</span><br>
+<span>在message框輸入’change 3 from B’，並按commit</span></p><p><span>(B電腦)</span><br>
+<strong><span>指令:git switch master</span></strong></p><p><strong><span>指令:git merge new-feature2</span></strong></p><ul>
+<li><span>git merge &lt;要整併回的分支&gt;，把目前分支整併到另一個分支(做完後現在的分支new-feature2會消失)</span></li>
+</ul><p><strong><span>指令:git log</span></strong><br>
+<span>做完merge，會發現沒有A做的更新，因為B做merge前沒有注意到A有做更新，因此沒有先做git pull，把A的更新抓下來，如果再直接做git push，會產生conflict。</span></p><div class="alert alert-danger">
+<p><span>這邊不能用git push -f，因為這樣A做的更新會直接不見!</span><br>
+<span>B電腦已經將分支切回master，push到github上的會是’少了A的更新的merge版本’，要做git push -f之前，要確認是在自己的branch，不能在大家共用的主要分枝上做git push -f</span></p>
+</div><p><strong><span>指令:git pull</span></strong><br>
+<span>到VSCode選擇版本</span><br>
+<span>按加號</span><br>
+<span>點選commit</span><br>
+<span>指令:git log</span><br>
+<span>指令:git push</span><br>
+<span>(已經將修改後的commit push到github上了)</span></p><div class="alert alert-warning">
+<p><span>小整理:</span></p>
+<h3 id="1在github上用pull-request1" data-id="1在github上用pull-request"><a class="anchor hidden-xs" href="#1在github上用pull-request1" title="1在github上用pull-request1"><span class="octicon octicon-link"></span></a><span>1.在github上用pull request</span></h3>
+<p><strong><span>指令:git switch master</span></strong><br>
+<strong><span>指令:git pull</span></strong><br>
+<strong><span>指令:git switch new-feature</span></strong><br>
+<strong><span>指令:git rebase master</span></strong><br>
+<span>指令:git push (conflicts)</span><br>
+<strong><span>指令:git push -f</span></strong><span> (在new-feature)</span><br>
+<strong><span>在github pull request</span></strong></p>
+<h3 id="2在自己的電腦merge之後再push1" data-id="2在自己的電腦merge之後再push"><a class="anchor hidden-xs" href="#2在自己的電腦merge之後再push1" title="2在自己的電腦merge之後再push1"><span class="octicon octicon-link"></span></a><span>2.在自己的電腦merge之後再push</span></h3>
+<p><strong><span>指令:git switch master</span></strong><br>
+<strong><span>指令:git merge new-feature2</span></strong><br>
+<strong><span>指令:git log</span></strong><span>(merge少了A的更新)</span><br>
+<span>指令:git push (conflicts)</span><br>
+<span>不能用指令:git push -f (在master)</span><br>
+<strong><span>指令:git pull</span></strong><br>
+<strong><span>指令:git push</span></strong></p>
+</div><div class="alert alert-success">
+<p><span>總結:</span><br>
+<span>較不推薦使用第二種方式，因為用git pull處理conflict，沒有git rebase處理conflict來得好，</span><strong><span>git pull無法確保merge前就把所有衝突解決</span></strong><span>，雖然merge前可以先切回master再pull一次，是不是就不會產生conflict，但要是merge之後，還沒push，剛好有人在這時候更新主要分支，之後又會有衝突要處理，這時候電腦端new-feature2已經merge回master，自己的分支已經不見了，conflict的處理就會比較麻煩。如果使用pull request，github會確保branches一定要在最新進度才能merge，</span><strong><span>使用pull request可以確保先在自己的分支解完衝突才執行merge</span></strong><span>，只要多rebase一次就可以解決有conflict的問題。</span></p>
+</div><h3 id="git使用教學4" data-id="git使用教學4"><a class="anchor hidden-xs" href="#git使用教學4" title="git使用教學4"><span class="octicon octicon-link"></span></a><span>git使用教學#4</span></h3><p><a href="https://www.youtube.com/watch?v=P-nbNgIzlYE" target="_blank" rel="noopener"><span>https://www.youtube.com/watch?v=P-nbNgIzlYE</span></a><br>
+<span class="youtube" data-videoid="P-nbNgIzlYE"><iframe frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" src="https://www.youtube.com/embed/P-nbNgIzlYE"></iframe></span></p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#git-branch" title="git branch">git branch</a></li>
+<li class=""><a href="#Command-line指令練習" title="Command line指令練習">Command line指令練習</a><ul class="nav">
+<li><a href="#補充指令" title="補充指令">補充指令</a></li>
+<li class=""><a href="#把新的branch整合回master" title="把新的branch整合回master">把新的branch整合回master</a><ul class="nav">
+<li><a href="#1在github上用pull-request" title="1.在github上用pull request">1.在github上用pull request</a></li>
+<li><a href="#2在自己的電腦merge之後再push" title="2.在自己的電腦merge之後再push">2.在自己的電腦merge之後再push</a></li>
+<li class=""><a href="#git使用教學4" title="git使用教學#4">git使用教學#4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">全部展開</a><a class="back-to-top" href="#">回到頂部</a><a class="go-to-bottom" href="#">移至底部</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#git-branch" title="git branch">git branch</a></li>
+<li class=""><a href="#Command-line指令練習" title="Command line指令練習">Command line指令練習</a><ul class="nav">
+<li><a href="#補充指令" title="補充指令">補充指令</a></li>
+<li class=""><a href="#把新的branch整合回master" title="把新的branch整合回master">把新的branch整合回master</a><ul class="nav">
+<li><a href="#1在github上用pull-request" title="1.在github上用pull request">1.在github上用pull request</a></li>
+<li><a href="#2在自己的電腦merge之後再push" title="2.在自己的電腦merge之後再push">2.在自己的電腦merge之後再push</a></li>
+<li class=""><a href="#git使用教學4" title="git使用教學#4">git使用教學#4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">全部展開</a><a class="back-to-top" href="#">回到頂部</a><a class="go-to-bottom" href="#">移至底部</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
